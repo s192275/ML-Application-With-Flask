@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare Service With ML</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main_page.css')}}">
+</head>
+<body>
+
+  <header>
+    <h1>Healthcare Services</h1>
+    <p>We are here to present you the best healthcare services.</p>
+  </header>
+
+  <section>
+    <h2>Our Services</h2>
+    <div class="image-wrapper">
+      <div class="image-box">
+        <img class="img-container" src = "{{url_for('static', filename = 'images/thyroid.jpg')}}" alt="Throid Disase Prediction Image">
+        <a href="{{ url_for('throid_info') }}">Throid Disase Prediction</a>
+      </div>
+      <div class="image-box">
+        <img class="img-container" src="{{url_for('static', filename = 'images/diabet.jpg')}}" alt="Diabetes Prediction Image">
+        <a href="{{ url_for('diabetes_info') }}">Diabetes Prediction</a>
+      </div>
+      <div class="image-box">
+        <img class="img-container" src="{{url_for('static', filename = 'images/heart.jpg')}}" alt="Heart Disase Prediction Image">
+        <a href="{{ url_for('heart_info') }}">Heart Disase Prediction</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; Designed by Serhat KILIÇ
+  </footer>
+
+</body>
+</html>

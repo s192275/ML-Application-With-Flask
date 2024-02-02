@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Prediction of Diabetes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .login {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: auto;
+            display: block; 
+            margin-bottom: 10px; /* Yeni eklenen kısım: Biraz boşluk bırakmak için */
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .radio-group,
+        .select-group {
+            margin-bottom: 10px;
+        }
+
+        .prediction {
+            margin-top: 20px;
+        }
+
+        .prediction.green {
+            color: green;
+        }
+
+        .prediction.red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p>If you don't know anything about input variables please visit the 
+        <a href="/">Home Page</a>
+    </p>
+
+    <div class="login">
+        <form action="{{ url_for('diabetes_predict')}}" method="post" id="predictionForm">
+            <div class="radio-group">
+                <label>HighBP:</label>
+                <input type="radio" id="low" name="HighBP" value="0" required="required">
+                <label for="low">Low</label>
+                <input type="radio" id="high" name="HighBP" value="1" required="required">
+                <label for="high">High</label>
+            </div>
+            <div class="radio-group">
+                <label>HighChol:</label>
+                <input type="radio" id="low" name="HighChol" value="0" required="required">
+                <label for="low">Low</label>
+                <input type="radio" id="high" name="HighChol" value="1" required="required">
+                <label for="high">High</label>
+            </div>
+            <div class="radio-group">
+                <label>CholCheck:</label>
+                <input type="radio" id="low" name="CholCheck" value="0" required="required">
+                <label for="low">Low</label>
+                <input type="radio" id="high" name="CholCheck" value="1" required="required">
+                <label for="high">High</label>
+            </div>
+            <label for="bmi">Bmi:</label>
+            <input type="text" id="bmi" name="Bmi" placeholder="BMI" required="required" />
+            <div class="radio-group">
+                <label>Smoke:</label>
+                <input type="radio" id="no" name="Smoke" value="0" required="required">
+                <label for="No">No</label>
+                <input type="radio" id="yes" name="Smoke" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>Stroke:</label>
+                <input type="radio" id="no" name="Stroke" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="Stroke" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>Heart_Disase_or_Heart_Attack:</label>
+                <input type="radio" id="no" name="Heart_Disase_or_Heart_Attack" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="Heart_Disase_or_Heart_Attack" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>PhysActivity:</label>
+                <input type="radio" id="no" name="PhysActivity" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="PhysActivity" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>Fruits:</label>
+                <input type="radio" id="no" name="Fruits" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="Fruits" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>Veggies:</label>
+                <input type="radio" id="no" name="Veggies" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="Veggies" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>HvyAlcoholConsump:</label>
+                <input type="radio" id="no" name="HvyAlcoholConsump" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="HvyAlcoholConsump" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>AnyHealthcare:</label>
+                <input type="radio" id="no" name="AnyHealthcare" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="AnyHealthcare" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <div class="radio-group">
+                <label>NoDocbcCost:</label>
+                <input type="radio" id="no" name="NoDocbcCost" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="NoDocbcCost" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+            <label for="gen">GenHlth:</label>
+            <input type="text" id="gen" name="GenHlth" placeholder="Gen Health" required="required" />
+            
+            <label for="mental">MentHlth:</label>
+            <input type="text" id="mental" name="MentHlth" placeholder="Mental Health" required="required" />
+            
+            <label for="phys">PhysHlth:</label>
+            <input type="text" id="phys" name="PhysHlth" placeholder="Physical Health" required="required" />
+            
+            <div class="radio-group">
+                <label>DiffWalk:</label>
+                <input type="radio" id="no" name="DiffWalk" value="0" required="required">
+                <label for="no">No</label>
+                <input type="radio" id="yes" name="DiffWalk" value="1" required="required">
+                <label for="yes">Yes</label>
+            </div>
+
+            <div class="radio-group">
+                <label>Sex:</label>
+                <input type="radio" id="male" name="Sex" value="1" required="required">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="Sex" value="0" required="required">
+                <label for="female">Female</label>
+            </div>
+
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="Age" placeholder="Enter Age" required="required" />
+            <button type="submit">Predict</button>
+        </form>
+        
+        <div class="prediction {% if prediction == 0 %}green{% elif prediction == 1 %}red{% endif %}">
+            {{ prediction_text }}
+        </div>
+    </div>
+
+</body>
+</html>

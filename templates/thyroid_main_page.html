@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypothroid Prediction API Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/thyroid_main_page.css')}}">
+</head>
+
+<body>
+    <header>
+        <h1>Information About Throid Disase Prediction API</h1>
+    </header>
+
+        <p>This is an ML API used for predicting the probability of having Throid Disase by Classification. The API is created by Serhat KILIÇ.</p>
+        <h2>Dataset</h2>
+        <p>This dataset was obtained from Kaggle(Thyroid Disease Data ).</p><a href="https://www.kaggle.com/datasets/yasserhessein/thyroid-disease-data-set">Dataset</a>
+        <h2>About ML API</h2>
+        <p>First, you must fill in all the blanks, radio buttons, and other components of the API. If you know the all inputs and what they are 
+          please visit the <a href="{{ url_for('thyroid_predict') }}">Predict</a>
+        </p>
+
+        <h3>Explanation About Inputs:</h3>
+        <p><strong>Age:</strong>Age of patient.</p>
+        <p><strong>Sex:</strong>Gender of patient.</p>
+        <p><strong>On Thyroxine:</strong>Does patient receive thyroid hormone therapy?</p>
+        <p><strong>Query on Thyroxine:</strong>Does patient have query about thyroxine?</p>
+        <p><strong>Antithyroid Medication:</strong>Does patient receive antithyroid medication?</p>
+        <p><strong>Sick:</strong>Does patient sick?</p>
+        <p><strong>Pregnant:</strong>Does patient pregnant?</p>
+        <p><strong>Thyroid Surgery:</strong>Has the patient had throid surgery before?</p>
+        <p><strong>I131 Treatment:</strong>Does patient receive I131 threatment?</p>
+        <p><strong>Query Hypothroid:</strong>Does patient have query about hypothroid?</p>
+        <p><strong>Query Hyperthroid:</strong>Does patient have query about hyperthroid?</p>
+        <p><strong>Lithium:</strong>Does patient use lithium pills?</p>
+        <p><strong>Goitre:</strong>Does patient have goitre?</p>
+        <p><strong>Hypopituitary:</strong>Does patients hypopituitary works normally?</p>
+        <p><strong>Psych:</strong>Psychological value</p>
+        <p><strong>TSH:</strong>TSH value</p>
+        <p><strong>T3:</strong>T3 value</p>
+        <p><strong>TT4:</strong>TT4 value</p>
+        <p><strong>T4U:</strong>T4U value</p>
+        <p><strong>Referral Source:</strong>Categories(Other-SVI-SVHC-STMW-SVHD)</p>
+
+
+
+
+
+        
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction API</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/diabetes_main_page.css')}}">
+</head>
+
+<body>
+    <header>
+        <h1>Information About Diabetes Prediction API</h1>
+    </header>
+
+        <p>This is an ML API used for predicting the probability of having diabetes by Classification. The API is created by Serhat KILIÇ.</p>
+        <h2>Dataset</h2>
+        <p>This dataset was obtained from UCI Machine Learning Repository(CDC Diabetes Health Indicators).</p><a href="https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators">Dataset</a>
+        <h2>About ML API</h2>
+        <p>First, you must fill in all the blanks, radio buttons, and other components of the API. If you know the all inputs and what they are 
+          please visit the <a href="{{ url_for('diabetes_predict') }}">Predict</a>
+        </p>
+
+        <h3>Explanation About Inputs:</h3>
+        <p><strong>HighBP:</strong>High blood pressure (Categorical(0-1))</p>
+        <p><strong>HighChol:</strong>High chol (Categorical(0-1))</p>
+        <p><strong>CholCheck:</strong>Checking of cholestrol.(Categorical(0-1))</p>
+        <p><strong>BMI:</strong>Body Mass Index(Numerical)</p>
+        <p><strong>Smoker:</strong>Smoking habit(Categorical(0-1))</p>
+        <p><strong>Stroke:</strong>Categorical(0-1)</p>
+        <p><strong>Heart Disase or Heart Attack:</strong>Heart Disase(Categorical(0-1))</p>
+        <p><strong>Physical Activity:</strong>Patient's physical activity(Categorical(0-1))</p>
+        <p><strong>Fruits:</strong>Does patient eat fruits regularly?(Categorical(0-1))</p>
+        <p><strong>Veggies:</strong>Does patient eat vegetables regularly? (Categorical(0-1))</p>
+        <p><strong>Heavy Alcohol Consumption:</strong>Alcohol consumption (Categorical(0-1))</p>      
+        <p><strong>Any Healthcare:</strong>Healthcare none or available(Categorical(0-1))</p>
+        <p><strong>NoDocbcCost:</strong>Categorical(0-1)</p>
+        <p><strong>GenHlth:</strong>Genetical Health(Categorical(1-2-3-4-5))</p>
+        <p><strong>MentHlth:</strong>Mental Health.(Numeric)</p>
+        <p><strong>PhysHlth:</strong>Physical Health.(Numeric)</p>
+        <p><strong>DiffWalk:</strong> It represents walking habits.(0-1)</p>
+        <p><strong>Sex:</strong>Gender of patient</p>
+        <p><strong>Age:</strong>Age of the patient</p>
+
+    </section>
+</body>
+
+</html>
